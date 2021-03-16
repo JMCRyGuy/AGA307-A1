@@ -20,6 +20,7 @@ public class Hit : MonoBehaviour
     {
         if (col.collider.CompareTag("Projectile"))
         {
+            
             Renderer ren = GetComponent<Renderer>();
             if (ren != null)
             {

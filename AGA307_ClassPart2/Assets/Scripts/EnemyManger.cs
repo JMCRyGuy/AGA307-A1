@@ -7,7 +7,8 @@ public class EnemyManger : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject[] enemyTypes;
     public List<GameObject> enemies;
-
+    public float spawnDelay = 3f;
+    public float numberToSpawn = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,8 @@ public class EnemyManger : MonoBehaviour
             
         }
         //SpawnMultipleEnemies();
-        AdditionOneToTen();
+        //AdditionOneToTen();
+        StartCoroutine(SpawnSequence());
     }
 
     void Update()
@@ -28,6 +30,17 @@ public class EnemyManger : MonoBehaviour
             SpawnEnemy(Random.Range(0, spawnPoints.Length - 1));
         }
 
+    }
+
+
+    IEnumerator SpawnSequence()
+    {
+        for(int i = 0; i < numberToSpawn; i++)
+        {
+            SpawnEnemy(Random.Range(0, spawnPoints.Length - 1));
+            yield return new WaitForSeconds(spawnDelay);
+        }
+        
     }
 
 
