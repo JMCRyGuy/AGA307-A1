@@ -2004,7 +2004,9 @@ GameObject:
   - component: {fileID: 9550666}
   - component: {fileID: -8793880271338531142}
   - component: {fileID: 6252526931683327320}
-  - component: {fileID: -5316473994857604711}
+  - component: {fileID: -2495020668467188326}
+  - component: {fileID: -1608570588401836163}
+  - component: {fileID: 3265812309727163183}
   m_Layer: 0
   m_Name: Skeleton_F
   m_TagString: Untagged
@@ -2075,7 +2077,54 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &-5316473994857604711
+--- !u!114 &-2495020668467188326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc2e85c5e5979a4a940fe32029acc9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: -1608570588401836163}
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointSet: 0
+  walkPointRange: 1000
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  smaScale: 0.5
+  smaSpeed: 2
+  medScale: 1
+  medSpeed: 1
+  larScale: 2
+  larSpeed: 0.5
+--- !u!195 &-1608570588401836163
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185486}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!54 &3265812309727163183
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

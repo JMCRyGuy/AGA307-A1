@@ -2,6 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum Sizes
+{
+    Small,
+    Medium,
+    Large,
+    // ~~~~~~~
+    Count
+}
+
+
+
+
+
+
 public class EnemyManger : MonoBehaviour
 {
     public Transform[] spawnPoints;
@@ -57,6 +72,26 @@ public class EnemyManger : MonoBehaviour
     {
         int y = x % spawnPoints.Length;
         GameObject temp = Instantiate<GameObject>(enemyTypes[Random.Range(0, enemyTypes.Length - 1)], spawnPoints[y].position, spawnPoints[y].rotation);
+
+        EnemyScript scriptRef = temp.GetComponent<EnemyScript>();
+        Sizes ranSize = (Sizes)Random.Range(0,3);
+        switch(ranSize)
+        {
+            case Sizes.Small:
+                scriptRef.SetSizeAndSpeed(scriptRef.smaScale, scriptRef.smaSpeed);
+                break;
+            case Sizes.Medium:
+                scriptRef.SetSizeAndSpeed(scriptRef.medScale, scriptRef.medSpeed);
+                break;
+            case Sizes.Large:
+                scriptRef.SetSizeAndSpeed(scriptRef.larScale, scriptRef.larSpeed);
+                break;
+            case Sizes.Count:
+                print("You Stink!");
+                break;
+
+
+        }
         enemies.Add(temp);
     }
 
