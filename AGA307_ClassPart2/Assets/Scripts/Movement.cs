@@ -5,22 +5,32 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed;
-    Rigidbody rb;
-
-    // Start is called before the first frame update
+    public float gravity = -4;
+    
+    public CharacterController controller;
+    //Vector3 veloc;
+    
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         float movex = Input.GetAxisRaw("Horizontal");
         float movez = Input.GetAxisRaw("Vertical");
 
-        Vector3 move = transform.right* movex +transform.forward * movez;
+        Vector3 move = transform.right * movex + transform.forward * movez;
 
-        rb.MovePosition(transform.position + move.normalized * speed * Time.deltaTime);
+        controller.Move(move * speed * Time.deltaTime);
+
+
     }
+
+/*
+    veloc.y += gravity* Time.deltaTime;
+    controller.Move(veloc* Time.deltaTime);
+*/
+        
 }

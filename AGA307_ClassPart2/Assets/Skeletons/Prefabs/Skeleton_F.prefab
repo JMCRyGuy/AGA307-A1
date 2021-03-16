@@ -2006,7 +2006,6 @@ GameObject:
   - component: {fileID: 6252526931683327320}
   - component: {fileID: -2495020668467188326}
   - component: {fileID: -1608570588401836163}
-  - component: {fileID: 3265812309727163183}
   m_Layer: 0
   m_Name: Skeleton_F
   m_TagString: Untagged
@@ -2112,7 +2111,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2124,22 +2123,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!54 &3265812309727163183
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185486}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &185512
 GameObject:
   m_ObjectHideFlags: 0
