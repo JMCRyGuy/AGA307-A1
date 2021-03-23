@@ -17,7 +17,7 @@ public enum Sizes
 
 
 
-public class EnemyManger : MonoBehaviour
+public class EnemyManger : Singleton<EnemyManger>
 {
     public Transform[] spawnPoints;
     public GameObject[] enemyTypes;
