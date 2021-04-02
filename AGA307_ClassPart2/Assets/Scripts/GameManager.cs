@@ -19,6 +19,11 @@ public class GameManager : Singleton<GameManager>
     public int enemiesRemaining;
     public Diffculty curDiffculty;
 
+    void Start()
+    {
+        ChangeDifficulty(curDiffculty);
+    }
+
 
     void Update()
     {
@@ -30,6 +35,7 @@ public class GameManager : Singleton<GameManager>
     {
         score += addpoints;
         UIManager.instance.scoreText.text = "Score: " + score;
+        UIManager.instance.ScoreEffect();
     }
 
 

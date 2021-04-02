@@ -78,13 +78,13 @@ public class EnemyManger : Singleton<EnemyManger>
         switch(ranSize)
         {
             case Sizes.Small:
-                scriptRef.SetSizeAndSpeed(scriptRef.smaScale, scriptRef.smaSpeed);
+                scriptRef.SetStats(scriptRef.smaScale, scriptRef.smaSpeed, scriptRef.smaHealth);
                 break;
             case Sizes.Medium:
-                scriptRef.SetSizeAndSpeed(scriptRef.medScale, scriptRef.medSpeed);
+                scriptRef.SetStats(scriptRef.medScale, scriptRef.medSpeed, scriptRef.medHealth);
                 break;
             case Sizes.Large:
-                scriptRef.SetSizeAndSpeed(scriptRef.larScale, scriptRef.larSpeed);
+                scriptRef.SetStats(scriptRef.larScale, scriptRef.larSpeed, scriptRef.larHealth);
                 break;
             case Sizes.Count:
                 print("You Stink!");
@@ -93,8 +93,13 @@ public class EnemyManger : Singleton<EnemyManger>
 
         }
         enemies.Add(temp);
+        
     }
 
+
+
+
+/*
     void AdditionOneToTen()
     {
         for (int i = 1; i <= 10; i++)
@@ -105,4 +110,5 @@ public class EnemyManger : Singleton<EnemyManger>
             }
         }
     }
+*/
 }

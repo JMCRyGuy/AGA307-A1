@@ -10,6 +10,7 @@ public class ProjectileFire : MonoBehaviour
     void Start()
     {
         rbody.AddForce(rbody.transform.forward * veloc, ForceMode.Impulse);
+        Destroy(gameObject, 2f);
     }
 
     // Update is called once per frame

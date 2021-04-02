@@ -718,7 +718,7 @@ Animator:
   m_GameObject: {fileID: 123184}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 20300ac630e0fcd4dbab63a9b39cdafa, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 494647c6bb33312489f3ef17c8d60cce, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -772,12 +772,16 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  animator: {fileID: 9523490}
   smaScale: 0.5
   smaSpeed: 2
+  smaHealth: 3
   medScale: 1
   medSpeed: 1
+  medHealth: 5
   larScale: 2
   larSpeed: 0.5
+  larHealth: 10
 --- !u!195 &-4376061079700031364
 NavMeshAgent:
   m_ObjectHideFlags: 0

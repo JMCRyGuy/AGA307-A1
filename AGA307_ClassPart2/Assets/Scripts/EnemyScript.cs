@@ -21,18 +21,24 @@ public class EnemyScript : MonoBehaviour
     public bool walkPointSet;
     public float walkPointRange;
     public LayerMask whatIsGround;
+    public Animator animator;
     // Current Stats
     private float curScale;
     private float curSpeed;
+    public float curHealth;
+    private float curMaxHealth;
     [Header("Small Stats")]
     public float smaScale = 0.5f;
     public float smaSpeed = 2f;
+    public float smaHealth = 3f;
     [Header("Medium Stats")]
     public float medScale = 1f;
     public float medSpeed = 1f;
+    public float medHealth = 5f;
     [Header("Large Stats")]
     public float larScale = 5f;
     public float larSpeed = 0.2f;
+    public float larHealth = 10f;
 
     float moveDist = 500;
 
@@ -71,16 +77,17 @@ public class EnemyScript : MonoBehaviour
 */
     }
 
-    public void SetSizeAndSpeed(float scale, float speed)
+    public void SetStats(float scale, float speed, float health)
     {
         curScale = scale;
         curSpeed = speed;
+        curHealth = health;
         transform.localScale = transform.localScale * scale;
     }
 
 
     void WalkAround()
-    { 
+    {
         if (!walkPointSet)
         {
             float randomX = Random.Range(-walkPointRange, walkPointRange);
@@ -90,8 +97,9 @@ public class EnemyScript : MonoBehaviour
             {
                 walkPointSet = true;
             }
+            
 
-    
+
         }
         else
         {
@@ -102,18 +110,34 @@ public class EnemyScript : MonoBehaviour
                 walkPointSet = false;
             }    
         }
+        animator.SetFloat("Speed", agent.velocity.magnitude);
+        print(agent.velocity.magnitude);
     }
 
-/*     IEnumerator Move()
+    public void TakeDamage(float dmgAmount)
     {
-        for(int i = 0; i  < moveDist; i++)
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime);
-            yield return null;
-        }
-        transform.Rotate(Vector3.up * 180);
-        yield return new WaitForSeconds(3f);
-        StartCoroutine(Move());
+        curHealth = curHealth - dmgAmount;
+        animator.SetFloat("Health", curHealth);
+        animator.SetFloat("RandomSeed", Random.Range(0, 10));
     }
-*/
+
+
+
+
+
+
+
+
+    /*     IEnumerator Move()
+        {
+            for(int i = 0; i  < moveDist; i++)
+            {
+                transform.Translate(Vector3.forward * Time.deltaTime);
+                yield return null;
+            }
+            transform.Rotate(Vector3.up * 180);
+            yield return new WaitForSeconds(3f);
+            StartCoroutine(Move());
+        }
+    */
 }
